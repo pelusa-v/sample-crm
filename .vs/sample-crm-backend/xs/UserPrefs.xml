@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{90D06DCE-C29E-4F7D-B901-7E1903D4CD69}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.sample-crm.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="sample-crm.API/Controllers/WeatherForecastController.cs">
+    <Files>
+      <File FileName="sample-crm.API/Controllers/WeatherForecastController.cs" Line="20" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="sample-crm-backend" expanded="True">
+            <Node name="sample-crm.API" expanded="True">
+              <Node name="Controllers" expanded="True" />
+            </Node>
+            <Node name="sample-crm.Application" expanded="True" />
+            <Node name="sample-crm.Core" expanded="True">
+              <Node name="Entities" expanded="True" />
+            </Node>
+            <Node name="sample-crm.Data" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="FrameworkReferences" selected="True" />
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

@@ -1,0 +1,181 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/sample-crm.Application.csproj": {}
+  },
+  "projects": {
+    "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/sample-crm.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/sample-crm.Application.csproj",
+        "projectName": "sample-crm.Application",
+        "projectPath": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/sample-crm.Application.csproj",
+        "packagesPath": "/Users/jp/.nuget/packages/",
+        "outputPath": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jp/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Data/sample-crm.Data.csproj": {
+                "projectPath": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Data/sample-crm.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/sample-crm.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/sample-crm.Core.csproj",
+        "projectName": "sample-crm.Core",
+        "projectPath": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/sample-crm.Core.csproj",
+        "packagesPath": "/Users/jp/.nuget/packages/",
+        "outputPath": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jp/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Data/sample-crm.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Data/sample-crm.Data.csproj",
+        "projectName": "sample-crm.Data",
+        "projectPath": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Data/sample-crm.Data.csproj",
+        "packagesPath": "/Users/jp/.nuget/packages/",
+        "outputPath": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jp/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/sample-crm.Core.csproj": {
+                "projectPath": "/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/sample-crm.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.310/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
