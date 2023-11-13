@@ -1,0 +1,17 @@
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/sample-crm.Application.csproj.AssemblyReference.cache
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/sample-crm.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/sample-crm.Application.AssemblyInfoInputs.cache
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/sample-crm.Application.AssemblyInfo.cs
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/sample-crm.Application.csproj.CoreCompileInputs.cache
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/bin/Debug/net7.0/sample-crm.Application.deps.json
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/bin/Debug/net7.0/sample-crm.Application.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/bin/Debug/net7.0/sample-crm.Application.pdb
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/bin/Debug/net7.0/sample-crm.Core.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/bin/Debug/net7.0/sample-crm.Data.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/bin/Debug/net7.0/sample-crm.Data.pdb
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/bin/Debug/net7.0/sample-crm.Core.pdb
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/sample-crm.Application.csproj.CopyComplete
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/sample-crm.Application.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/refint/sample-crm.Application.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/sample-crm.Application.pdb
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Application/obj/Debug/net7.0/ref/sample-crm.Application.dll

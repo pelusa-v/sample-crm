@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using sample_crm.Data.Interfaces;
 using sample_crm.Data.Repositories;
 
 namespace sample_crm.Data;

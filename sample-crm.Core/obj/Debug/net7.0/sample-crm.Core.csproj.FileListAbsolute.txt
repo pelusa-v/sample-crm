@@ -1,0 +1,12 @@
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/bin/Debug/net7.0/sample-crm.Core.deps.json
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/bin/Debug/net7.0/sample-crm.Core.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/bin/Debug/net7.0/sample-crm.Core.pdb
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/Debug/net7.0/sample-crm.Core.csproj.AssemblyReference.cache
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/Debug/net7.0/sample-crm.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/Debug/net7.0/sample-crm.Core.AssemblyInfoInputs.cache
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/Debug/net7.0/sample-crm.Core.AssemblyInfo.cs
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/Debug/net7.0/sample-crm.Core.csproj.CoreCompileInputs.cache
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/Debug/net7.0/sample-crm.Core.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/Debug/net7.0/refint/sample-crm.Core.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/Debug/net7.0/sample-crm.Core.pdb
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.Core/obj/Debug/net7.0/ref/sample-crm.Core.dll

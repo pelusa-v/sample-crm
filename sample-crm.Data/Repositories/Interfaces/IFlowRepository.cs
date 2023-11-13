@@ -1,6 +1,11 @@
-﻿namespace sample_crm.Data;
+﻿using sample_crm.Core.Entities;
+namespace sample_crm.Data.Interfaces;
 
-public class IFlowRepository
+public interface IFlowRepository
 {
-
+    Task<Flow> GetFlow(int id);
+    Task<List<Flow>> ListFlows();
+    Task<Flow> CreateFlow(Flow newFlow);
+    Task<Flow> UpdateFlow(Flow newFlow);
+    Task DeleteFlow(int id);
 }
