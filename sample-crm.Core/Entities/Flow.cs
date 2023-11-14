@@ -9,4 +9,5 @@ public class Flow
     public int Name { get; set; }
     public int FlowSateId { get; set; }
     public FlowState FlowState { get; set; }
+    public bool Freeze { get; set; } = false;
 }

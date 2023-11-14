@@ -1,39 +1,37 @@
 ﻿<Properties StartupConfiguration="{90D06DCE-C29E-4F7D-B901-7E1903D4CD69}|https">
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.sample-crm.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="sample-crm.Application/Services/FlowService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="sample-crm.API/Controllers/WeatherForecastController.cs">
     <Files>
-      <File FileName="sample-crm.Application/Mapping/FlowProfile.cs" />
-      <File FileName="sample-crm.Application/DTOs/FlowDTO.cs" />
-      <File FileName="sample-crm.Application/Mapping/AutoMapperMarker.cs" />
-      <File FileName="sample-crm.Application/Services/Interfaces/IFlowService.cs" />
-      <File FileName="sample-crm.Application/Services/FlowService.cs" Line="9" Column="51" />
+      <File FileName="sample-crm.Application/Services/FlowTrayService.cs" Line="47" Column="1" />
+      <File FileName="sample-crm.Application/Services/FlowService.cs" Line="37" Column="49" />
+      <File FileName="sample-crm.API/Program.cs" Line="1" Column="1" />
+      <File FileName="sample-crm.Application/Services/FlowStateService.cs" Line="32" Column="12" />
+      <File FileName="sample-crm.Data/Repositories/FlowStateRepository.cs" Line="1" Column="1" />
+      <File FileName="sample-crm.API/Controllers/FlowTrayController.cs" Line="20" Column="1" />
+      <File FileName="sample-crm.API/Controllers/WeatherForecastController.cs" Line="23" Column="6" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="sample-crm-backend" expanded="True">
-            <Node name="sample-crm.API" expanded="True">
-              <Node name="Controllers" expanded="True" />
+          <Node name="sample-crm-backend">
+            <Node name="sample-crm.API">
+              <Node name="Controllers" expanded="True">
+                <Node name="WeatherForecastController.cs" selected="True" />
+              </Node>
               <Node name="appsettings.json" expanded="True" />
             </Node>
-            <Node name="sample-crm.Application">
-              <Node name="Mapping" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="FlowService.cs" selected="True" />
-              </Node>
-            </Node>
-            <Node name="sample-crm.Core" expanded="True">
-              <Node name="Entities" expanded="True" />
+            <Node name="sample-crm.Data" expanded="True">
+              <Node name="Repositories" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.sample-crm.API PreferredExecutionTarget="/Applications/Google Chrome.app" />
 </Properties>

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using sample_crm.Application.DTOs;
+using sample_crm.Application.Exceptions;
 using sample_crm.Application.Services.Interfaces;
 using sample_crm.Core.Entities;
 using sample_crm.Data.Repositories;
@@ -57,6 +58,17 @@ namespace sample_crm.Application.Services
 
             var newFlow = await _flowRepo.UpdateFlow(flowToUpdate);
             return _mapper.Map<FlowDTO>(newFlow);
+        }
+
+        public async Task<bool> ValidateFlow(int flowId)
+        {
+            var flow = await _flowRepo.GetFlow(flowId);
+            if(flow == null)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }

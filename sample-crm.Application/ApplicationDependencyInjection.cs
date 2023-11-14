@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using sample_crm.Application.Mapping;
+using sample_crm.Application.Services;
+using sample_crm.Application.Services.Interfaces;
 namespace sample_crm.Application;
 
 public static class ApplicationDependencyInjection
@@ -16,7 +18,9 @@ public static class ApplicationDependencyInjection
     // extension
     private static void AddServices(this IServiceCollection services)
     {
-
+        services.AddScoped<IFlowService, FlowService>();
+        services.AddScoped<IFlowStateService, FlowStateService>();
+        services.AddScoped<IFlowTrayService, FlowTrayService>();
     }
 
     // extension

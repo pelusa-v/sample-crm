@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using sample_crm.Application.DTOs;
+using sample_crm.Application.Exceptions;
 using sample_crm.Application.Services.Interfaces;
 using sample_crm.Data.Repositories;
 
@@ -20,9 +21,10 @@ namespace sample_crm.Application.Services
 
         public async Task<FlowDTO> PromoteFlowState(int flowId, int stateId)
         {
-            //var flowState = await _flowStateRepo.GetFlowState(stateId);
             var flow = await _flowRepo.GetFlow(flowId);
-            flow.FlowSateId = stateId;
+            var flowState = await _flowStateRepo.GetFlowState(stateId);
+
+            flow.FlowSateId = flowState.Id;
             var newFlow = await _flowRepo.UpdateFlow(flow);
             return _mapper.Map<FlowDTO>(newFlow);
         }
@@ -31,6 +33,23 @@ namespace sample_crm.Application.Services
         {
             throw new NotImplementedException();
         }
+
+        public async Task<FlowDTO> UnfreezeFlowTray(int flowId)
+        {
+            var flow = await _flowRepo.GetFlow(flowId);
+            flow.Freeze = true;
+            var newFlow = await _flowRepo.UpdateFlow(flow);
+            return _mapper.Map<FlowDTO>(newFlow);
+        }
+
+        public async Task<FlowDTO> FreezeFlowTray(int flowId)
+        {
+            var flow = await _flowRepo.GetFlow(flowId);
+            flow.Freeze = false;
+            var newFlow = await _flowRepo.UpdateFlow(flow);
+            return _mapper.Map<FlowDTO>(newFlow);
+        }
+
     }
 }
 

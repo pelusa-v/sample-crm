@@ -8,6 +8,7 @@ namespace sample_crm.Application.Services.Interfaces
 		Task<FlowDTO> Update(int id, UpdateFlowDTO flow);
 		Task<FlowDTO> Get(int id);
 		Task<IEnumerable<FlowDTO>> List();
+		Task<bool> ValidateFlow(int flowId);
 		Task Delete(int id);
 	}
 }

@@ -7,6 +7,8 @@ namespace sample_crm.Application.Services.Interfaces
 	{
 		Task<FlowDTO> PromoteFlowState(int flowId, int stateId);
 		Task<FlowDTO> PromoteFlowState(int flowId, string stateName);
+        Task<FlowDTO> FreezeFlowTray(int flowId);
+        Task<FlowDTO> UnfreezeFlowTray(int flowId);
 	}
 }
 
