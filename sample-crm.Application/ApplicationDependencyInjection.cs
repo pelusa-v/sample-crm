@@ -21,6 +21,7 @@ public static class ApplicationDependencyInjection
         services.AddScoped<IFlowService, FlowService>();
         services.AddScoped<IFlowStateService, FlowStateService>();
         services.AddScoped<IFlowTrayService, FlowTrayService>();
+        // to fix
     }
 
     // extension
