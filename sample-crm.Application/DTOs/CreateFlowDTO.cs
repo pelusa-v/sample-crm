@@ -6,7 +6,7 @@ namespace sample_crm.Application.DTOs
 {
 	public class CreateFlowDTO
 	{
-        public int Name { get; set; }
+        public string Name { get; set; }
         public int FlowSateId { get; set; }
     }
 }

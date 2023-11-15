@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using sample_crm.Application;
 using sample_crm.Application.DTOs;
-using sample_crm.Application.Services;
+using sample_crm.Application.Services.Interfaces;
 
 namespace sample_crm.API.Controllers
 {
@@ -13,11 +13,11 @@ namespace sample_crm.API.Controllers
     [Route("api/[controller]")]
     public class FlowTrayController : ControllerBase
     {
-        private readonly FlowTrayService _flowTrayService;
-        private readonly FlowService _flowService;
-        private readonly FlowStateService _flowStateService;
+        private readonly IFlowTrayService _flowTrayService;
+        private readonly IFlowService _flowService;
+        private readonly IFlowStateService _flowStateService;
 
-        public FlowTrayController(FlowTrayService flowTrayService, FlowService flowService, FlowStateService flowStateService)
+        public FlowTrayController(IFlowTrayService flowTrayService, IFlowService flowService, IFlowStateService flowStateService)
         {
             _flowTrayService = flowTrayService;
             _flowStateService = flowStateService;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using sample_crm.Application.DTOs;
-using sample_crm.Application.Services;
+using sample_crm.Application.Services.Interfaces;
 
 namespace sample_crm.API.Controllers
 {
@@ -12,9 +12,9 @@ namespace sample_crm.API.Controllers
     [Route("api/[controller]")]
     public class FlowStateController : ControllerBase
     {
-        public FlowStateService _flowStateService;
+        public IFlowStateService _flowStateService;
 
-        public FlowStateController(FlowStateService flowStateService)
+        public FlowStateController(IFlowStateService flowStateService)
         {
             _flowStateService = flowStateService;
         }

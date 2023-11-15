@@ -34,12 +34,12 @@ public class FlowStateRepository : IFlowStateRepository
 
     public async Task<FlowState> GetFlowState(int id)
     {
-        return await _context.FlowStates.FindAsync(id);
+        return await _context.FlowStates.Include(f => f.Flows).FirstOrDefaultAsync(f => f.Id == id);
     }
 
     public async Task<List<FlowState>> ListFlowStates()
     {
-        return await _context.FlowStates.ToListAsync();
+        return await _context.FlowStates.Include(f => f.Flows).ToListAsync();
     }
 
     public async Task<FlowState> UpdateFlowState(FlowState newState)

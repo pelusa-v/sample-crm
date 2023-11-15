@@ -3,16 +3,16 @@ using AutoMapper;
 using sample_crm.Application.DTOs;
 using sample_crm.Application.Services.Interfaces;
 using sample_crm.Core.Entities;
-using sample_crm.Data.Repositories;
+using sample_crm.Data.Interfaces;
 
 namespace sample_crm.Application.Services
 {
 	public class FlowStateService : IFlowStateService
 	{
-        private readonly FlowStateRepository _flowStateRepo;
+        private readonly IFlowStateRepository _flowStateRepo;
         private readonly IMapper _mapper;
 
-        public FlowStateService(FlowStateRepository flowStateRepo, IMapper mapper)
+        public FlowStateService(IFlowStateRepository flowStateRepo, IMapper mapper)
         {
             _flowStateRepo = flowStateRepo;
             _mapper = mapper;

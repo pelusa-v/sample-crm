@@ -7,7 +7,8 @@ namespace sample_crm.Application.DTOs
 	{
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Flow> Flows { get; set; }
+        public bool Default { get; set; }
+        public ICollection<FlowDTO> Flows { get; set; }
     }
 }
 

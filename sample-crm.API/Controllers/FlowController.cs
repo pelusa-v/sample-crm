@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using sample_crm.Application.DTOs;
-using sample_crm.Application.Services;
+using sample_crm.Application.Services.Interfaces;
 
 namespace sample_crm.API.Controllers
 {
@@ -13,9 +13,9 @@ namespace sample_crm.API.Controllers
     [Route("api/[controller]")]
     public class FlowController : ControllerBase
     {
-        public FlowService _flowService;
+        public IFlowService _flowService;
 
-        public FlowController(FlowService flowService)
+        public FlowController(IFlowService flowService)
         {
             _flowService = flowService;
         }
@@ -35,6 +35,12 @@ namespace sample_crm.API.Controllers
         public async Task<ActionResult<List<FlowDTO>>> ListFlows()
         {
             return (await _flowService.List()).ToList();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<FlowDTO>> CreateFlow([FromBody]CreateFlowDTO flow)
+        {
+            return await _flowService.Create(flow);
         }
     }
 }

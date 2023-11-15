@@ -3,16 +3,16 @@ using sample_crm.Application.DTOs;
 using sample_crm.Application.Exceptions;
 using sample_crm.Application.Services.Interfaces;
 using sample_crm.Core.Entities;
-using sample_crm.Data.Repositories;
+using sample_crm.Data.Interfaces;
 namespace sample_crm.Application.Services
 {
 	public class FlowService : IFlowService
 	{
-        private readonly FlowRepository _flowRepo;
-        private readonly FlowStateRepository _flowStateRepo;
+        private readonly IFlowRepository _flowRepo;
+        private readonly IFlowStateRepository _flowStateRepo;
         private readonly IMapper _mapper;
 
-        public FlowService(FlowRepository flowRepo, FlowStateRepository flowStateRepo, IMapper mapper)
+        public FlowService(IFlowRepository flowRepo, IFlowStateRepository flowStateRepo, IMapper mapper)
 		{
 			_flowRepo = flowRepo;
             _flowStateRepo = flowStateRepo;
@@ -24,9 +24,13 @@ namespace sample_crm.Application.Services
             var defaultState = await _flowStateRepo.GetDefaultFlowState();
             var flowToCreate = _mapper.Map<Flow>(flow);
 
+            Console.WriteLine("----------------");
+            Console.WriteLine(defaultState.Default);
+            Console.WriteLine(defaultState.Name);
+            Console.WriteLine(defaultState.Id);
             if(defaultState != null)
             {
-                flowToCreate.FlowSateId = defaultState.Id;
+                flowToCreate.FlowStateId = defaultState.Id;
             }
 
             var newFlow = await _flowRepo.CreateFlow(flowToCreate);
@@ -47,6 +51,7 @@ namespace sample_crm.Application.Services
         public async Task<IEnumerable<FlowDTO>> List()
         {
             var flows = await _flowRepo.ListFlows();
+            Console.WriteLine(flows[0].FlowState.Name);
             return _mapper.Map<IEnumerable<FlowDTO>>(flows);
         }
 

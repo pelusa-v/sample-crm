@@ -29,12 +29,12 @@ public class FlowRepository : IFlowRepository
 
     public async Task<Flow> GetFlow(int id)
     {
-        return await _context.Flows.FindAsync(id);
+        return await _context.Flows.Include(f => f.FlowState).FirstOrDefaultAsync(f => f.Id == id);
     }
 
     public async Task<List<Flow>> ListFlows()
     {
-        return await _context.Flows.ToListAsync();
+        return await _context.Flows.Include(f => f.FlowState).ToListAsync();
     }
 
     public async Task<Flow> UpdateFlow(Flow newFlow)
