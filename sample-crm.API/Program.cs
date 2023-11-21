@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Cors.Infrastructure;
 using System.Text.Json.Serialization;
 using sample_crm.Application;
 using sample_crm.Data;
+using sample_crm.API;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,12 +13,15 @@ builder.Services.AddControllers()
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
 
 // Data and Application layers
 builder.Services
     .AddDataLayer(builder.Configuration)
     .AddApplicationLayer(builder.Configuration);
+
+builder.Services.AddJwt();
 
 var app = builder.Build();
 

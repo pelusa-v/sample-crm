@@ -1,17 +1,20 @@
 ﻿using System.Data.Common;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using sample_crm.Core;
 using sample_crm.Core.Entities;
 
 namespace sample_crm.Data;
 
-public class AppDbContext : DbContext
+public class AppDbContext : IdentityDbContext
 {
     public AppDbContext(DbContextOptions options) : base(options) 
     {}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);  // don't forget!
+
         modelBuilder.Entity<FlowState>().HasData(
             new FlowState
             {

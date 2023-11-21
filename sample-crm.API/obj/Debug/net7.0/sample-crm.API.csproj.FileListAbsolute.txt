@@ -71,3 +71,16 @@
 /Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.Extensions.DependencyModel.dll
 /Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Mono.TextTemplating.dll
 /Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/System.CodeDom.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.Extensions.Identity.Core.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.Extensions.Options.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.IdentityModel.Logging.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/Microsoft.IdentityModel.Tokens.dll
+/Users/jp/Code/dotnet/sample-crm/sample-crm-backend/sample-crm.API/bin/Debug/net7.0/System.IdentityModel.Tokens.Jwt.dll

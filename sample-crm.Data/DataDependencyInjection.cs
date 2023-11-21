@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using sample_crm.Data.Interfaces;
@@ -13,6 +14,7 @@ public static class DataDependencyInjection
     {
         services.AddDatabase(configuration);
         services.AddRepositories();
+        services.AddIdentityConfiguration();
         return services;
     }
 
@@ -27,5 +29,12 @@ public static class DataDependencyInjection
     private static void AddDatabase(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddDbContext<AppDbContext>(options => options.UseMySQL(configuration.GetConnectionString("Database")));
+    }
+
+    private static void AddIdentityConfiguration(this IServiceCollection services)
+    {
+        services.AddIdentity<IdentityUser, IdentityRole>()
+            .AddEntityFrameworkStores<AppDbContext>()
+            .AddDefaultTokenProviders();
     }
 }

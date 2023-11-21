@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using sample_crm.Application.DTOs;
 using sample_crm.Application.Services.Interfaces;
@@ -32,6 +34,7 @@ namespace sample_crm.API.Controllers
         }
 
         [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<List<FlowDTO>>> ListFlows()
         {
             return (await _flowService.List()).ToList();
