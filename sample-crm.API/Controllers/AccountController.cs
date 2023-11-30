@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -18,9 +19,11 @@ namespace sample_crm.API.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly IConfiguration _configuration;
+        private readonly SignInManager<IdentityUser> _signInManager;
 
-        public AccountController(UserManager<IdentityUser> userManager, IConfiguration configuration)
+        public AccountController(UserManager<IdentityUser> userManager, IConfiguration configuration, SignInManager<IdentityUser> signInManager)
         {
+            _signInManager = signInManager;
             _userManager = userManager;
             _configuration = configuration;
         }
@@ -59,6 +62,22 @@ namespace sample_crm.API.Controllers
                 Token = new JwtSecurityTokenHandler().WriteToken(securityToken),
                 Expiration = expiration,
             };
+        }
+
+        [HttpPost("login")]
+        public async Task <ActionResult<AuthResponseDTO>> Login(AuthRequestDTO authCredentials)
+        {
+            var identityRes = await _signInManager.PasswordSignInAsync(authCredentials.Email, authCredentials.Password,
+                isPersistent: false, lockoutOnFailure: false);
+            
+            if(identityRes.Succeeded)
+            {
+                return BuildToken(authCredentials);
+            }
+            else
+            {
+                return BadRequest("Incorrect login!");
+            }
         }
     }
 }
