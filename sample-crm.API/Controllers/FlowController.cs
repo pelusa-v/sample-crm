@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using sample_crm.Application.DTOs;
 using sample_crm.Application.Services.Interfaces;
@@ -13,12 +14,15 @@ namespace sample_crm.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class FlowController : ControllerBase
     {
-        public IFlowService _flowService;
+        private readonly IFlowService _flowService;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public FlowController(IFlowService flowService)
+        public FlowController(IFlowService flowService, UserManager<IdentityUser> userManager)
         {
+            _userManager = userManager;
             _flowService = flowService;
         }
 
@@ -34,7 +38,7 @@ namespace sample_crm.API.Controllers
         }
 
         [HttpGet]
-        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [AllowAnonymous]
         public async Task<ActionResult<List<FlowDTO>>> ListFlows()
         {
             return (await _flowService.List()).ToList();
@@ -43,7 +47,11 @@ namespace sample_crm.API.Controllers
         [HttpPost]
         public async Task<ActionResult<FlowDTO>> CreateFlow([FromBody]CreateFlowDTO flow)
         {
-            return await _flowService.Create(flow);
+            var userEmailClaim = HttpContext.User.Claims.Where(claim => claim.Type == "email").FirstOrDefault();
+            var userEmail = userEmailClaim.Value;
+            var user = await _userManager.FindByEmailAsync(userEmail);
+
+            return await _flowService.Create(flow, user.Id);
         }
     }
 }

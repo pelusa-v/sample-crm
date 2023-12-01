@@ -19,20 +19,17 @@ namespace sample_crm.Application.Services
             _mapper = mapper;
 		}
 
-        public async Task<FlowDTO> Create(CreateFlowDTO flow)
+        public async Task<FlowDTO> Create(CreateFlowDTO flow, string ownerId)
         {
             var defaultState = await _flowStateRepo.GetDefaultFlowState();
             var flowToCreate = _mapper.Map<Flow>(flow);
 
-            Console.WriteLine("----------------");
-            Console.WriteLine(defaultState.Default);
-            Console.WriteLine(defaultState.Name);
-            Console.WriteLine(defaultState.Id);
             if(defaultState != null)
             {
                 flowToCreate.FlowStateId = defaultState.Id;
             }
-
+            
+            flowToCreate.OwnerId = ownerId;
             var newFlow = await _flowRepo.CreateFlow(flowToCreate);
             return _mapper.Map<FlowDTO>(newFlow);
         }

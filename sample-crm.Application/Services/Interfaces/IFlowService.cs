@@ -4,7 +4,7 @@ namespace sample_crm.Application.Services.Interfaces
 {
 	public interface IFlowService
 	{
-		Task<FlowDTO> Create(CreateFlowDTO flow);
+		Task<FlowDTO> Create(CreateFlowDTO flow, string ownerId);
 		Task<FlowDTO> Update(int id, UpdateFlowDTO flow);
 		Task<FlowDTO> Get(int id);
 		Task<IEnumerable<FlowDTO>> List();

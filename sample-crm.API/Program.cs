@@ -3,6 +3,10 @@ using System.Text.Json.Serialization;
 using sample_crm.Application;
 using sample_crm.Data;
 using sample_crm.API;
+using System.IdentityModel.Tokens.Jwt;
+
+// avoid default claim mapping (claim type email)
+JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +45,7 @@ app.UseCors(corsPolicyBuilder =>
         .AllowAnyHeader()
     );
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
