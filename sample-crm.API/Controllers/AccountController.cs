@@ -6,6 +6,8 @@ using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
@@ -78,6 +80,20 @@ namespace sample_crm.API.Controllers
             {
                 return BadRequest("Incorrect login!");
             }
+        }
+
+        [HttpGet("token/refresh")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public ActionResult<AuthResponseDTO> Refresh()
+        {
+            var userEmailClaim = HttpContext.User.Claims.Where(claim => claim.Type == "email").FirstOrDefault();
+            var userEmail = userEmailClaim.Value;
+            var userCredentials = new AuthRequestDTO()
+            {
+                Email = userEmail
+            };
+
+            return BuildToken(userCredentials);
         }
     }
 }
