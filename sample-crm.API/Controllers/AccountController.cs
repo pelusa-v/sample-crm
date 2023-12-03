@@ -38,7 +38,7 @@ namespace sample_crm.API.Controllers
 
             if(identityRes.Succeeded)
             {
-                return BuildToken(authCredentials);
+                return await BuildToken(authCredentials);
             }
             else
             {
@@ -46,12 +46,16 @@ namespace sample_crm.API.Controllers
             }
         }
 
-        private AuthResponseDTO BuildToken(AuthRequestDTO authCredentials)
+        private async Task<AuthResponseDTO> BuildToken(AuthRequestDTO authCredentials)
         {
             var claims = new List<Claim>(){
                 new Claim("email", authCredentials.Email),
                 new Claim("valor especial prueba", "Soy un valor secreto")
             };
+
+            var user = await _userManager.FindByEmailAsync(authCredentials.Email);
+            var claimsDb = await _userManager.GetClaimsAsync(user);
+            claims.AddRange(claimsDb);
 
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["SecretKey"]));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
@@ -74,7 +78,7 @@ namespace sample_crm.API.Controllers
             
             if(identityRes.Succeeded)
             {
-                return BuildToken(authCredentials);
+                return await BuildToken(authCredentials);
             }
             else
             {
@@ -84,7 +88,7 @@ namespace sample_crm.API.Controllers
 
         [HttpGet("token/refresh")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-        public ActionResult<AuthResponseDTO> Refresh()
+        public async Task<ActionResult<AuthResponseDTO>> Refresh()
         {
             var userEmailClaim = HttpContext.User.Claims.Where(claim => claim.Type == "email").FirstOrDefault();
             var userEmail = userEmailClaim.Value;
@@ -93,7 +97,23 @@ namespace sample_crm.API.Controllers
                 Email = userEmail
             };
 
-            return BuildToken(userCredentials);
+            return await BuildToken(userCredentials);
+        }
+
+        [HttpPost("grant/admin")]
+        public async Task<ActionResult> GrantAdmin(GrantAdminAuthorizationDTO grantAdminDTO)
+        {
+            var user = await _userManager.FindByEmailAsync(grantAdminDTO.Email);
+            await _userManager.AddClaimAsync(user, new Claim("admin", ""));
+            return NoContent();
+        }
+
+        [HttpPost("revoke/admin")]
+        public async Task<ActionResult> RevokeAdmin(GrantAdminAuthorizationDTO grantAdminDTO)
+        {
+            var user = await _userManager.FindByEmailAsync(grantAdminDTO.Email);
+            await _userManager.RemoveClaimAsync(user, new Claim("admin", null));
+            return NoContent();
         }
     }
 }

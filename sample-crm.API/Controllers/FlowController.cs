@@ -14,7 +14,7 @@ namespace sample_crm.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "admin")]
     public class FlowController : ControllerBase
     {
         private readonly IFlowService _flowService;
